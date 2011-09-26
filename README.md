@@ -1,8 +1,5 @@
 Sublime Text 2 Pyflakes Plugin
 ==============================
-
-About
------
 This is a Sublime Text 2 package that will run Pyflakes against Python files being edited and highlight the warnings returned.
 
 Requirements
