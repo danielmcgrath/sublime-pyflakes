@@ -47,7 +47,7 @@ class PyflakesListener(sublime_plugin.EventListener):
           if region:
             regions.append(region)
 
-        view.add_regions('PyflakesWarnings', regions, 'string', 'dot')
+        view.add_regions('PyflakesWarnings', regions, 'string pyflakeswarning', 'dot')
 
 
   def on_selection_modified(self, view):
