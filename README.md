@@ -7,9 +7,9 @@ Requirements
 
 The package requires Pyflakes to already be installed and in a place where Python can find it, e.g. ```/usr/bin```
 
-## Windows
+#### Windows
 
-Install Pyflakes and set your Python Path in SYSTEM PATH
+Install Pyflakes and set Python Path in SYSTEM PATH
 
 
 Installation
