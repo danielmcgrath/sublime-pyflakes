@@ -1,6 +1,19 @@
 import sublime, sublime_plugin
 import subprocess
 import re
+import os
+import sys
+
+def pyflakes_command(file_name):
+  if sys.platform == 'win32':
+    path = os.getenv('PATH').split(';')
+    python_path_pattern = re.compile('Python\d{2}$')
+    for p in path:
+      if python_path_pattern.search(p) is not None:
+        return [p+'\Python', p+'\Scripts\pyflakes', file_name]
+    return []
+  return ['pyflakes', file_name]
+
 
 def highlight_error(self, view, warning):
   if warning:
@@ -37,7 +50,7 @@ class PyflakesListener(sublime_plugin.EventListener):
       self.warning_messages = []
 
       file_name = view.file_name().replace(' ', '\ ')
-      process = subprocess.Popen(['pyflakes', file_name], stdout = subprocess.PIPE)
+      process = subprocess.Popen(pyflakes_command(file_name), stdout = subprocess.PIPE)
       results, error = process.communicate()
 
       if results:

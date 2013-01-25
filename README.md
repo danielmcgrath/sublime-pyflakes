@@ -4,7 +4,13 @@ This is a Sublime Text 2 package that will run Pyflakes against Python files bei
 
 Requirements
 ------------
+
 The package requires Pyflakes to already be installed and in a place where Python can find it, e.g. ```/usr/bin```
+
+#### Windows
+
+Install Pyflakes and set Python Path in SYSTEM PATH
+
 
 Installation
 ------------
